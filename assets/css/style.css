@@ -1,0 +1,213 @@
+/***************************
+ * COMMON STYLE
+ ***************************/
+
+html {
+    background-color: #BFB6BB;
+    height: 100%;
+}
+
+html, body {
+    color: #36393B;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1rem;
+    min-height: 100%;
+    position: relative;
+}
+
+header, footer {
+    text-align: center;
+}
+
+header h1 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 3rem;
+    margin-top: 2%;
+}
+
+header h1 .fas.fa-crosshairs {
+    color: #A5D8FF;
+}
+
+h2 {
+    color: #C49799;
+    margin-top: 3%;
+    text-align: center;
+}
+
+footer {
+    bottom: 0;
+    font-size: 14px;
+    left: 47%;
+    position: absolute;
+}
+
+a, a:focus, a:hover {
+    color: #36393B;
+    text-decoration: none;
+}
+
+
+
+/***************************
+ * HOME STYLE
+ ***************************/
+
+body.home main {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.fas.fa-fast-backward, .fas.fa-gamepad {
+    color: #36393B;
+}
+
+body.home #resume, body.home #or, body.home #formStart {
+    text-align: center;
+}
+
+body.home #resume a, body.home #formStart button {
+    background-color: #A5D8FF;
+    border: 1px solid #36393B;
+}
+
+body.home #resume a:hover, body.home #formStart button:hover {
+    background-color: #AFD0D6;
+}
+
+body.home #or {
+    color: #AFD0D6;
+}
+
+body.home #formStart input.text {
+    border: 1px solid #36393B;
+    display: block;
+    margin: 3% auto;
+    text-align: center;
+}
+
+
+
+
+
+/***************************
+ * RESUME STYLE
+ ***************************/
+
+body.resume .games {
+    margin-bottom: 3%;
+    text-align: center;
+}
+
+body.resume .players p {
+    margin-bottom: 0;
+}
+
+body.resume .fas.fa-angle-double-right, body.resume .fas.fa-angle-double-left {
+    color: #AFD0D6;
+    font-size: 12px;
+}
+
+body.resume .fas.fa-trophy {
+    color: #C49799;
+    font-size: 12px;
+}
+
+
+
+
+/***************************
+ * STATE STYLE
+ ***************************/
+
+body.state #returnHome {
+    margin-top: 5%;
+    text-align: center;
+}
+
+body.state #returnHome a {
+    background-color: inherit;
+    border: 1px solid #36393B;
+}
+
+body.state #returnHome a:hover {
+    background-color: #AFD0D6;
+}
+
+
+
+
+
+
+/***************************
+ * TABLES STYLE
+ ***************************/
+
+table {
+    text-align: center;
+    margin: auto;
+}
+
+table#board-max {
+    max-width: 500px;
+    max-height: 500px;
+    width: 500px;
+    height: 500px;
+}
+
+table#board-mini {
+    max-width: 100px;
+    max-height: 100px;
+    width: 100px;
+    height: 100px;
+}
+
+table tr td {
+    border: 1px solid #000;
+}
+
+table#board-max tr td[play="0"] {
+    cursor: pointer;
+}
+
+table#board-max tr td {
+    max-height: 164px;
+    max-width: 164px;
+    height: 164px;
+    width: 164px;
+}
+
+table#board-mini tr td {
+    max-height: 32px;
+    max-width: 32px;
+    height: 32px;
+    width: 32px;
+}
+
+table#board-max tr td[play="2"],
+table#board-max tr td[play="1"] {
+    background-size: 80px;
+}
+
+table#board-mini tr td[play="2"],
+table#board-mini tr td[play="1"] {
+    background-size: 20px;
+}
+
+table tr td[play="2"],
+table tr td[play="1"] {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+table tr td[play="2"] {
+  background-image: url(../svg/circle.svg);
+}
+
+table tr td[play="1"] {
+  background-image: url(../svg/cross.svg);
+}

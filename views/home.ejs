@@ -1,0 +1,25 @@
+<div class="row">
+    <!-- Button "Resume a game" -> Go to /resume -->
+    <div class="col-sm-12" id="resume">
+        <p>
+            <a class="col-sm-5 btn btn-default" href="/resume" role="button"><i class="fas fa-fast-backward"></i> Resume a game</a>
+        </p>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="col-sm-12" id="or">
+        <p>OR</p>
+    </div>
+
+    <br><br><br>
+
+    <!-- Form to start a new game -> Go to /start -> /state -->
+    <div class="col-sm-12" id="formStart">
+        <form class="newGame" action="/start" method="post">
+            <input type="text" name="player1" placeholder="Enter a name" class="col-sm-7 text">
+            <input type="text" name="player2" placeholder="Enter a name" class="col-sm-7 text">
+            <button type="submit" name="button" class="col-sm-5 btn btn-default"><i class="fas fa-gamepad"></i> Start a new game</button>
+        </form>
+    </div>
+</div>

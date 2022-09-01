@@ -1,0 +1,10 @@
+[
+    {
+        "id": 0,
+        "board": [0,0,0,0,0,0,0,0,0],
+        "player1": "Toto",
+        "player2": "Titi",
+        "current": "player1",
+        "winner": null
+    }
+]

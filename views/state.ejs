@@ -1,0 +1,46 @@
+<div class="row">
+    <div class="col-sm-12">
+        <!-- If there is no winner -->
+        <%if (state.winner == null) { %>
+            <div class="current">
+                <h2><%= state.current %>, your turn!</h2>
+            </div>
+        <!-- Else if no one won the game -->
+        <% } else if (state.winner == "none") { %>
+            <div class="winner">
+                <h2>No winner!</h2>
+            </div>
+        <!-- Else, someone wins -->
+        <% } else { %>
+            <div class="winner">
+                <h2><%= state.winner %>, you have won!</h2>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<br><br>
+
+<!-- Big board -->
+<div class="row">
+    <div class="col-sm-12">
+        <table id="board-max">
+            <% for(var i = 0; i < state.board.length; i++) {%>
+                <%if (i % 3 == 0) { %>
+                    <tr>
+                <% } %>
+                    <td play="<%= state.board[i] %>" id="<%= i %>"></td>
+                <%if (i % 3 == 2) { %>
+                    </tr>
+                <% } %>
+            <% } %>
+        </table>
+    </div>
+</div>
+
+<!-- Button "Return to home" -> Go to /home -->
+<div class="row">
+    <div class="col-sm-12" id="returnHome">
+        <p><a class="btn btn-default" href="/" role="button">Return to home</a> </p>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title><%= title %></title>
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/fontawesome-all.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<body class="container <%= body %>">
+
+    <header>
+        <div class="row">
+            <div class="col-sm-12">
+                <h1><i class="fas fa-crosshairs"></i> Tic Tac Toe</h1>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Include the main of the page -->
+        <%- include(page) %>
+    </main>
+
+    <footer>
+        <div class="row">
+            <div class="col-sm-12">
+                &copy; Marinette
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="/jquery/jquery-3.3.1.min.js"></script>
+
+    <!-- If this is the State page -->
+    <%if (body == 'state') { %>
+        <script type="text/javascript">
+            // Get the state to use it in the ajax_play script
+            var state = <%- JSON.stringify(state) %>;
+        </script>
+        <script type="text/javascript" src="/js/ajax_play.js"></script>
+    <% } %>
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-sm-12">
+        <h2>Choose a game</h2>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-sm-12">
+        <!-- Count to handle Bootstrap col -->
+        <% var count = 0; %>
+
+        <!-- Reversed loop on all states -->
+        <% for(var i = states.length-1; i >= 0; i--) { %>
+            <% if (count % 3 == 0) { %>
+                <div class="row games">
+            <% } %>
+
+                <!-- If there is no winner, so the game can be played -->
+                <% if (states[i].winner == null) { %>
+                    <!-- Go to /state/:id -->
+                    <div class="col-sm-4" style="cursor: pointer;" onclick="window.location.href='/state/<%= states[i].id %>'">
+                <% } else { %>
+                    <div class="col-sm-4">
+                <% } %>
+
+                    <!-- Mini board -->
+                    <div class="board">
+                        <table id="board-mini">
+                            <% for(var j = 0; j < states[i].board.length; j++) { %>
+                                <% if (j % 3 == 0) { %>
+                                    <tr>
+                                <% } %>
+                                    <td id="<%= j %>" play="<%= states[i].board[j] %>"></td>
+                                <% if (j % 3 == 2) { %>
+                                    </tr>
+                                <% } %>
+                            <% } %>
+                        </table>
+                    </div>
+
+                    <!-- Players' name -->
+                    <div class="players">
+                        <p>
+                            <!-- If the player1 is the winner -->
+                            <% if (states[i].player1 == states[i].winner) { %>
+                                <i class="fas fa-trophy"></i> <%= states[i].player1 %> <i class="fas fa-trophy"></i>
+                            <!-- Else if the player1 is the current player and there is no winner -->
+                            <% } else if (states[i].player1 == states[i].current && states[i].winner == null) { %>
+                                <i class="fas fa-angle-double-right"></i> <%= states[i].player1 %> <i class="fas fa-angle-double-left"></i>
+                            <% } else { %>
+                                <%= states[i].player1 %>
+                            <% } %>
+                        </p>
+                        <p>
+                            <!-- If the player2 is the winner -->
+                            <% if (states[i].player2 == states[i].winner) { %>
+                                <i class="fas fa-trophy"></i> <%= states[i].player2 %> <i class="fas fa-trophy"></i>
+                            <!-- Else if the player2 is the current player and there is no winner -->
+                            <% } else if (states[i].player2 == states[i].current && states[i].winner == null) { %>
+                                <i class="fas fa-angle-double-right"></i> <%= states[i].player2 %> <i class="fas fa-angle-double-left"></i>
+                            <% } else { %>
+                                <%= states[i].player2 %>
+                            <% } %>
+                        </p>
+                    </div>
+
+                </div>
+
+            <% if (count % 3 == 2) { %>
+                </div>
+            <% } %>
+            
+            <% count = count + 1; %>
+        <% } %>
+    </div>
+</div>
